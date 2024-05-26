@@ -51,21 +51,4 @@ resource "helm_release" "this" {
     name  = "l2announcements.enabled"
     value = "true"
   }
-
-  # enable ingress controller
-  set {
-    name  = "ingressController.enabled"
-    value = "true"
-  }
-
-  set {
-    name  = "ingressController.loadbalancerMode"
-    value = "dedicated"
-  }
-
-  # enable gateway api
-  set {
-    name  = "gatewayAPI.enabled"
-    value = "true"
-  }
 }
