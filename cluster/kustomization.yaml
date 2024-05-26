@@ -6,3 +6,4 @@ resources:
   - infrastructure/configurations/self-signed-ca.yaml
   - infrastructure/controllers/cert-manager.yaml
   - infrastructure/controllers/weave-gitops.yaml
+  - infrastructure/crds/gateway-api.yaml
