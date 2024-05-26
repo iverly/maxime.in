@@ -5,8 +5,8 @@ metadata:
   name: area-51-ca
 spec:
   isCA: true
-  duration: 365d
-  renewBefore: 360h
+  duration: 8760h # 1 year
+  renewBefore: 360h # 15 days
   commonName: area-51-ca
   secretName: area-51-ca
   issuerRef:
