@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: area-51-ca
+spec:
+  isCA: true
+  duration: 365d
+  renewBefore: 360h
+  commonName: area-51-ca
+  secretName: area-51-ca
+  issuerRef:
+    name: area-51-selfsigned-cluster-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
