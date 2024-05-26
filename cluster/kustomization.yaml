@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: flux-system
 
 resources:
+  - infrastructure/configurations/l2-aware-lb.yaml
   - infrastructure/configurations/self-signed-ca.yaml
   - infrastructure/controllers/cert-manager.yaml
   - infrastructure/controllers/weave-gitops.yaml
