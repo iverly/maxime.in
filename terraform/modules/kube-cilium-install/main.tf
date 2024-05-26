@@ -68,15 +68,4 @@ resource "helm_release" "this" {
     name  = "gatewayAPI.enabled"
     value = "true"
   }
-
-  # enable mTLS
-  set {
-    name  = "authentication.mutual.spire.enabled"
-    value = "true"
-  }
-
-  set {
-    name  = "authentication.mutual.spire.install.enabled"
-    value = "true"
-  }
 }
