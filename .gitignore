@@ -84,3 +84,6 @@ terraform.tfstate.*
 
 # kubernetes
 *kubeconfig.yaml
+
+# inventory files
+inventory.yaml

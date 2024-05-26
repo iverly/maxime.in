@@ -1,0 +1,13 @@
+controller+worker:
+  hosts:
+    - address: 192.168.0.1
+      port: 22
+      user: fedora
+      no_taints: true
+      install_flags: []
+
+controller:
+  hosts: []
+
+workers:
+  hosts: []
