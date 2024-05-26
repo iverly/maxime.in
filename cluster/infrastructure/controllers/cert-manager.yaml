@@ -14,4 +14,4 @@ spec:
     name: area-51-flux-sync
   path: infrastructure/controllers/cert-manager
   dependsOn:
-    - gateway-api
+    - name: gateway-api
