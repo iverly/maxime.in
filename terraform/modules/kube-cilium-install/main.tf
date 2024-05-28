@@ -51,4 +51,15 @@ resource "helm_release" "this" {
     name  = "l2announcements.enabled"
     value = "true"
   }
+
+  # rate limit
+  set {
+    name  = "k8sClientRateLimit.qps"
+    value = "100"
+  }
+
+  set {
+    name  = "k8sClientRateLimit.burst"
+    value = "200"
+  }
 }
