@@ -9,3 +9,9 @@ resource "kubernetes_namespace_v1" "cert-manager" {
     name = "cert-manager"
   }
 }
+
+resource "kubernetes_namespace_v1" "dns" {
+  metadata {
+    name = "dns"
+  }
+}
