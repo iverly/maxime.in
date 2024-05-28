@@ -3,9 +3,11 @@ kind: Kustomization
 namespace: flux-system
 
 resources:
+  - apps/pihole.yaml
   - infrastructure/configurations/l2-aware-lb.yaml
   - infrastructure/configurations/self-signed-ca.yaml
   - infrastructure/controllers/cert-manager.yaml
+  - infrastructure/controllers/external-dns.yaml
   - infrastructure/controllers/ingress-nginx.yaml
   - infrastructure/controllers/metallb.yaml
   - infrastructure/controllers/openebs.yaml
