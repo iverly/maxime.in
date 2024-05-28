@@ -30,6 +30,8 @@ spec:
       mixedService: true
       loadBalancerIP: 10.42.0.253
       type: LoadBalancer
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: dns.area-51.fr
       extraLabels:
         area-51.fr/service: pihole
     serviceWeb:
