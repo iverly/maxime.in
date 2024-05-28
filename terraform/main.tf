@@ -48,15 +48,6 @@ module "create_namespaces" {
   depends_on = [module.k0s_cluster]
 }
 
-module "cilium_install" {
-  source = "./modules/kube-cilium-install"
-
-  controller_ip = module.k0s_cluster.controller_ips[0]
-  namespace     = "kube-system"
-
-  depends_on = [module.k0s_cluster, module.create_namespaces]
-}
-
 module "flux_install" {
   source = "./modules/kube-flux-install"
 
@@ -65,5 +56,5 @@ module "flux_install" {
   namespace = "flux-system"
   git_url   = "https://github.com/iverly/area-51"
 
-  depends_on = [module.k0s_cluster, module.create_namespaces, module.cilium_install]
+  depends_on = [module.k0s_cluster, module.create_namespaces]
 }

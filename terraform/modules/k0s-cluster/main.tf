@@ -17,8 +17,7 @@ resource "k0s_cluster" "this" {
   name    = var.name
   version = "1.29.3+k0s.0"
 
-  hosts   = local.k0s_hosts
-  no_wait = true # Don't wait for the nodes to be ready there is no cni
+  hosts = local.k0s_hosts
 
   config = <<EOT
 apiVersion: k0s.k0sproject.io/v1beta1
@@ -29,10 +28,7 @@ spec:
   api:
     sans: [${join(", ", local.controller_ips)}, 127.0.0.1]
   network:
-    provider: custom
     podCIDR: 10.142.0.0/16
     serviceCIDR: 10.143.0.0/16
-    kubeProxy:
-      disabled: true
 EOT
 }
