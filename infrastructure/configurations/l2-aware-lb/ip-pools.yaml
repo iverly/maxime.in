@@ -1,0 +1,24 @@
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: area-51-ip-pool
+spec:
+  addresses:
+    - 10.42.0.150/31
+    - 10.42.0.152/29
+    - 10.42.0.160/27
+    - 10.42.0.192/29
+    - 10.42.0.200/32
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: pihole-ip-pool
+spec:
+  serviceAllocation:
+    serviceSelectors:
+      - matchLabels:
+          area-51.fr/service: pihole
+  addresses:
+    - 10.42.0.253/32

@@ -1,0 +1,12 @@
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: policy-apple-a2348
+spec:
+  nodeSelectors:
+    - matchLabels:
+        area-51.fr/manufacturer: apple
+        area-51.fr/model: A2348
+  ipAddressPools:
+    - area-51-ip-pool
+    - pihole-ip-pool

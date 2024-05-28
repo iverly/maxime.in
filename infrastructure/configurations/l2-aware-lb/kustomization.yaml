@@ -3,5 +3,5 @@ kind: Kustomization
 namespace: kube-system
 
 resources:
-  - ip-pool.yaml
-  - l2-announcement-policy.yaml
+  - ip-pools.yaml
+  - l2-announcement.yaml
