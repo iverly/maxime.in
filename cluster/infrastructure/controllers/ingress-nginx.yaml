@@ -13,3 +13,6 @@ spec:
     kind: GitRepository
     name: area-51-flux-sync
   path: infrastructure/controllers/ingress-nginx
+  dependsOn:
+    - name: metallb
+    - name: l2-aware-lb
