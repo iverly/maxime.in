@@ -15,3 +15,9 @@ resource "kubernetes_namespace_v1" "dns" {
     name = "dns"
   }
 }
+
+resource "kubernetes_namespace_v1" "minecraft" {
+  metadata {
+    name = "minecraft"
+  }
+}
