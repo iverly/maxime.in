@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: flux-system
 
 resources:
+  - apps/minecraft.yaml
   - apps/pihole.yaml
   - infrastructure/configurations/external-names.yaml
   - infrastructure/configurations/l2-aware-lb.yaml
