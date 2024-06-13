@@ -16,7 +16,7 @@ spec:
   values:
     minecraftServer:
       eula: true
-      version: 1.21.0
+      version: 1.21
       type: VANILLA
       difficulty: normal
       levelSeed: 1584853961
