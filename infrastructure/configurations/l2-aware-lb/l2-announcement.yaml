@@ -10,3 +10,4 @@ spec:
   ipAddressPools:
     - area-51-ip-pool
     - pihole-ip-pool
+    - minecraft-ip-pool

@@ -22,3 +22,15 @@ spec:
           area-51.fr/service: pihole
   addresses:
     - 10.42.0.253/32
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: minecraft-ip-pool
+spec:
+  serviceAllocation:
+    serviceSelectors:
+      - matchLabels:
+          area-51.fr/service: minecraft
+  addresses:
+    - 10.42.0.252/32
