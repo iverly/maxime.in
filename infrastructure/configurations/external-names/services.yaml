@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mabbox
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: mabbox.bytel.fr
+spec:
+  type: ExternalName
+  externalName: 10.42.0.254
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rocky
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: rocky,rocky.compute.area-51.fr
+spec:
+  type: ExternalName
+  externalName: 10.42.0.10
