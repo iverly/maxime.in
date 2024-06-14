@@ -17,14 +17,14 @@ spec:
     minecraftServer:
       eula: true
       version: "1.21"
-      type: VANILLA
+      type: FABRIC
       difficulty: normal
-      levelSeed: 1584853961
+      levelSeed: "1584853961"
       ops: iverly
       spawnProtection: 0
       memory: 8G
       viewDistance: 16
-      serviceType: LoadBalancer
+      serviceType: NodePort
     serviceLabels:
       area-51.fr/service: minecraft
     serviceAnnotations:
