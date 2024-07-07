@@ -24,7 +24,7 @@ spec:
       spawnProtection: 0
       memory: 8G
       viewDistance: 16
-      serviceType: NodePort
+      serviceType: LoadBalancer
     serviceLabels:
       maxime.in/service: minecraft
     serviceAnnotations:
