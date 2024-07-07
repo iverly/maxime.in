@@ -6,7 +6,7 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: mabbox.bytel.fr
 spec:
   type: ExternalName
-  externalName: 10.42.0.254
+  externalName: 192.168.1.1
 ---
 kind: Service
 apiVersion: v1
