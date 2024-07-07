@@ -30,6 +30,7 @@ spec:
     serviceAnnotations:
       external-dns.alpha.kubernetes.io/hostname: minecraft.maxime.in
     persistence:
+      storageClass: local-hostpath-retain
       dataDir:
         enabled: true
         Size: 30Gi
