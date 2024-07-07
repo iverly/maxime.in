@@ -8,6 +8,7 @@ resources:
   - infrastructure/configurations/external-names.yaml
   - infrastructure/configurations/l2-aware-lb.yaml
   - infrastructure/configurations/self-signed-ca.yaml
+  - infrastructure/configurations/storage-classes.yaml
   - infrastructure/controllers/cert-manager.yaml
   - infrastructure/controllers/external-dns.yaml
   - infrastructure/controllers/ingress-nginx.yaml
