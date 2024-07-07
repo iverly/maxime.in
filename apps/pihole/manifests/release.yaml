@@ -28,7 +28,6 @@ spec:
     virtualHost: pihole.maxime.in
     serviceDns:
       mixedService: true
-      loadBalancerIP: 10.42.0.253
       type: LoadBalancer
       annotations:
         external-dns.alpha.kubernetes.io/hostname: dns.maxime.in
