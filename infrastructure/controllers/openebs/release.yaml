@@ -25,7 +25,6 @@ spec:
           enabled: false
     ndm:
       enabled: false
-    localprovisioner:
-      hostpathClass:
-        reclaimPolicy: Retain
-        isDefaultClass: true
+    hostpathClass:
+      reclaimPolicy: Delete
+      isDefaultClass: true
