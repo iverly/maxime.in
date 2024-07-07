@@ -16,3 +16,4 @@ resources:
   - infrastructure/controllers/openebs.yaml
   - infrastructure/controllers/weave-gitops.yaml
   - infrastructure/crds/gateway-api.yaml
+  - infrastructure/operators/postgres.yaml
