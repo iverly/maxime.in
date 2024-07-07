@@ -17,3 +17,13 @@ metadata:
 spec:
   type: ExternalName
   externalName: 10.42.0.10
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: cluster
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: cluster.k8s.maxime.in
+spec:
+  type: ExternalName
+  externalName: 10.42.0.10
