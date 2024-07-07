@@ -5,11 +5,7 @@ metadata:
   name: maxime-in-ip-pool
 spec:
   addresses:
-    - 10.42.0.150/31
-    - 10.42.0.152/29
-    - 10.42.0.160/27
-    - 10.42.0.192/29
-    - 10.42.0.200/32
+    - 10.42.100.0/24
 ---
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
@@ -21,7 +17,7 @@ spec:
       - matchLabels:
           maxime.in/service: pihole
   addresses:
-    - 10.42.0.253/32
+    - 10.42.255.253/32
 ---
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
@@ -33,4 +29,4 @@ spec:
       - matchLabels:
           maxime.in/service: minecraft
   addresses:
-    - 10.42.0.252/32
+    - 10.42.110.1/32
