@@ -30,5 +30,7 @@ spec:
   network:
     podCIDR: 10.142.0.0/16
     serviceCIDR: 10.143.0.0/16
+  telemetry:
+    enabled: false
 EOT
 }
