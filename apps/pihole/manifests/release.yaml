@@ -18,22 +18,22 @@ spec:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: nginx
-        cert-manager.io/cluster-issuer: area-51-cluster-issuer
+        cert-manager.io/cluster-issuer: maxime-in-cluster-issuer
       hosts:
-        - pihole.area-51.fr
+        - pihole.maxime.in
       tls:
         - hosts:
-            - pihole.area-51.fr
-          secretName: pihole.area-51.fr
-    virtualHost: pihole.area-51.fr
+            - pihole.maxime.in
+          secretName: pihole.maxime.in
+    virtualHost: pihole.maxime.in
     serviceDns:
       mixedService: true
       loadBalancerIP: 10.42.0.253
       type: LoadBalancer
       annotations:
-        external-dns.alpha.kubernetes.io/hostname: dns.area-51.fr
+        external-dns.alpha.kubernetes.io/hostname: dns.maxime.in
       extraLabels:
-        area-51.fr/service: pihole
+        maxime.in/service: pihole
     serviceWeb:
       https:
         enabled: false

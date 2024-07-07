@@ -26,9 +26,9 @@ spec:
       viewDistance: 16
       serviceType: NodePort
     serviceLabels:
-      area-51.fr/service: minecraft
+      maxime.in/service: minecraft
     serviceAnnotations:
-      external-dns.alpha.kubernetes.io/hostname: minecraft.area-51.fr
+      external-dns.alpha.kubernetes.io/hostname: minecraft.maxime.in
     persistence:
       dataDir:
         enabled: true

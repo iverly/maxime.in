@@ -5,9 +5,9 @@ metadata:
 spec:
   nodeSelectors:
     - matchLabels:
-        area-51.fr/manufacturer: apple
-        area-51.fr/model: A2348
+        maxime.in/manufacturer: apple
+        maxime.in/model: A2348
   ipAddressPools:
-    - area-51-ip-pool
+    - maxime-in-ip-pool
     - pihole-ip-pool
     - minecraft-ip-pool

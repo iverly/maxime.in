@@ -11,7 +11,7 @@ spec:
   wait: true
   sourceRef:
     kind: GitRepository
-    name: area-51-flux-sync
+    name: maxime-in-flux-sync
   path: apps/minecraft
   dependsOn:
     - name: metallb

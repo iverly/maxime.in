@@ -2,7 +2,7 @@
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
-  name: area-51-ip-pool
+  name: maxime-in-ip-pool
 spec:
   addresses:
     - 10.42.0.150/31
@@ -19,7 +19,7 @@ spec:
   serviceAllocation:
     serviceSelectors:
       - matchLabels:
-          area-51.fr/service: pihole
+          maxime.in/service: pihole
   addresses:
     - 10.42.0.253/32
 ---
@@ -31,6 +31,6 @@ spec:
   serviceAllocation:
     serviceSelectors:
       - matchLabels:
-          area-51.fr/service: minecraft
+          maxime.in/service: minecraft
   addresses:
     - 10.42.0.252/32

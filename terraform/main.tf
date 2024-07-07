@@ -18,7 +18,7 @@ locals {
 module "k0s_cluster" {
   source = "./modules/k0s-cluster"
 
-  name  = "area-51-k0s"
+  name  = "maxime-in-k0s"
   hosts = local.hosts
 }
 
@@ -51,10 +51,10 @@ module "create_namespaces" {
 module "flux_install" {
   source = "./modules/kube-flux-install"
 
-  name      = "area-51-flux-sync"
+  name      = "maxime-in-flux-sync"
   path      = "cluster"
   namespace = "flux-system"
-  git_url   = "https://github.com/iverly/area-51"
+  git_url   = "https://github.com/iverly/maxime.in"
 
   depends_on = [module.k0s_cluster, module.create_namespaces]
 }
