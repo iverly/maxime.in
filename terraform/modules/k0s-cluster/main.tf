@@ -26,7 +26,7 @@ metadata:
   name: ${var.name}
 spec:
   api:
-    sans: [${join(", ", local.controller_ips)}, 127.0.0.1]
+    sans: [cluster.k8s.maxime.in, ${join(", ", local.controller_ips)}, 127.0.0.1]
   network:
     podCIDR: 10.142.0.0/16
     serviceCIDR: 10.143.0.0/16
