@@ -4,6 +4,12 @@ resource "kubernetes_namespace_v1" "flux-system" {
   }
 }
 
+resource "kubernetes_namespace_v1" "operators" {
+  metadata {
+    name = "operators"
+  }
+}
+
 resource "kubernetes_namespace_v1" "cert-manager" {
   metadata {
     name = "cert-manager"
