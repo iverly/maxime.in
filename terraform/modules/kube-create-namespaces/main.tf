@@ -27,3 +27,9 @@ resource "kubernetes_namespace_v1" "minecraft" {
     name = "minecraft"
   }
 }
+
+resource "kubernetes_namespace_v1" "home-assistant" {
+  metadata {
+    name = "home-assistant"
+  }
+}
