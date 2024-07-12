@@ -1,0 +1,14 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Database configuration
+recorder:
+  db_url: !secret database_url
+  db_max_retries: 10
+  db_retry_wait: 3
+  auto_purge: true
+
+# Specific configurations for each component
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
