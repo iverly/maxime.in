@@ -30,3 +30,15 @@ spec:
           maxime.in/service: minecraft
   addresses:
     - 10.42.110.1/32
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: nginx-ingress-external-ip-pool
+spec:
+  serviceAllocation:
+    serviceSelectors:
+      - matchLabels:
+          maxime.in/service: nginx-ingress-external
+  addresses:
+    - 10.42.255.252/32
