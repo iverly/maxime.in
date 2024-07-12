@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: flux-system
 
 resources:
+  - apps/home-assistant.yaml
   - apps/minecraft.yaml
   - apps/pihole.yaml
   - infrastructure/configurations/external-names.yaml
