@@ -46,6 +46,9 @@ spec:
             - name: http
               containerPort: 8123
               protocol: TCP
+            - name: homekit
+              containerPort: 31063
+              protocol: TCP
           livenessProbe:
             failureThreshold: 3
             httpGet:

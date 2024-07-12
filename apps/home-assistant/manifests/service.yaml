@@ -15,3 +15,22 @@ spec:
   selector:
     app.kubernetes.io/name: home-assistant
     app.kubernetes.io/instance: home-assistant
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-assistant-homekit
+  labels:
+    app.kubernetes.io/name: home-assistant
+    app.kubernetes.io/instance: home-assistant
+spec:
+  type: NodePort
+  ports:
+    - name: homekit
+      port: 31063
+      nodePort: 31063
+      targetPort: homekit
+      protocol: TCP
+  selector:
+    app.kubernetes.io/name: home-assistant
+    app.kubernetes.io/instance: home-assistant

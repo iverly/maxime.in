@@ -17,6 +17,11 @@ http:
   cors_allowed_origins:
     - home-assistant.maxime.in
 
+# Homekit integration
+homekit:
+  advertise_ip: "10.42.0.10"
+  port: 31063
+
 # Specific configurations for each component
 automation: !include automations.yaml
 script: !include scripts.yaml
