@@ -1,6 +1,10 @@
 # Loads default set of integrations. Do not remove.
 default_config:
 
+# Home assistant configuration
+homeassistant:
+  external_url: "https://home-assistant.maxime.in"
+
 # Database configuration
 recorder:
   db_url: !secret database_url
