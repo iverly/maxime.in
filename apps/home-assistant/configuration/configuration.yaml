@@ -8,6 +8,15 @@ recorder:
   db_retry_wait: 3
   auto_purge: true
 
+# HTTP server configuration
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.142.0.0/16
+    - 10.143.0.0/16
+  cors_allowed_origins:
+    - home-assistant.maxime.in
+
 # Specific configurations for each component
 automation: !include automations.yaml
 script: !include scripts.yaml

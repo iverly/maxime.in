@@ -6,6 +6,7 @@ resources:
   - manifests/external-secrets/rbac.yaml
   - manifests/external-secrets/secrets-template.yaml
   - manifests/external-secrets/store.yaml
+  - manifests/ingress.yaml
   - manifests/postgres.yaml
   - manifests/pvc.yaml
   - manifests/rbac.yaml
