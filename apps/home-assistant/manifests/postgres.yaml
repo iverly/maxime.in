@@ -1,0 +1,26 @@
+kind: "postgresql"
+apiVersion: "acid.zalan.do/v1"
+metadata:
+  name: "postgres"
+  namespace: "default"
+  labels:
+    team: home-assistant
+spec:
+  teamId: "home-assistant"
+  postgresql:
+    version: "16"
+  numberOfInstances: 1
+  volume:
+    size: "10Gi"
+    storageClass: "local-hostpath-retain"
+  users:
+    ha: []
+  databases:
+    ha: ha
+  resources:
+    requests:
+      cpu: 100m
+      memory: 100Mi
+    limits:
+      cpu: 500m
+      memory: 500Mi

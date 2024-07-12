@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: home-assistant
+  labels:
+    app.kubernetes.io/name: home-assistant
+    app.kubernetes.io/instance: home-assistant
+spec:
+  serviceName: home-assistant
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: home-assistant
+      app.kubernetes.io/instance: home-assistant
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: home-assistant
+        app.kubernetes.io/instance: home-assistant
+      annotations:
+    spec:
+      securityContext: {}
+      initContainers:
+        - name: setup-configuration
+          image: busybox:latest
+          imagePullPolicy: Always
+          command:
+            - sh
+            - -c
+          args:
+            - "echo 'Setting configmaps' && cp -LR /tmp/configuration/* /config/ &&
+              echo 'Setting secrets' && cp -LR /tmp/secrets/* /config/ && echo 'Done'"
+          volumeMounts:
+            - mountPath: /tmp/configuration/
+              name: configuration-from-configmap
+            - mountPath: /tmp/secrets/
+              name: secrets
+            - mountPath: /config
+              name: configuration
+      containers:
+        - name: home-assistant
+          securityContext: {}
+          image: "ghcr.io/home-assistant/home-assistant:2024.7.1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8123
+              protocol: TCP
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: http
+              scheme: HTTP
+            periodSeconds: 20
+            successThreshold: 1
+            timeoutSeconds: 2
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: http
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          volumeMounts:
+            - mountPath: /config/.storage
+              name: storage
+            - mountPath: /config/blueprints
+              name: blueprints
+            - mountPath: /config
+              name: configuration
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: home-assistant-storage
+        - name: blueprints
+          persistentVolumeClaim:
+            claimName: home-assistant-blueprints
+        - name: configuration-from-configmap
+          configMap:
+            name: home-assistant-configuration
+        - name: secrets
+          secret:
+            secretName: home-assistant-secrets
+        - name: configuration
+          emptyDir: {}

@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: home-assistant
+
+resources:
+  - manifests/external-secrets/rbac.yaml
+  - manifests/external-secrets/secrets-template.yaml
+  - manifests/external-secrets/store.yaml
+  - manifests/postgres.yaml
+  - manifests/pvc.yaml
+  - manifests/rbac.yaml
+  - manifests/service.yaml
+  - manifests/stateful-set.yaml
+
+configMapGenerator:
+  - name: home-assistant-configuration
+    files:
+      - configuration/automations.yaml
+      - configuration/configuration.yaml
+      - configuration/scenes.yaml
+      - configuration/scripts.yaml
+      - configuration/secrets.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
