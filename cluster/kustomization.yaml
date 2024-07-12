@@ -13,6 +13,7 @@ resources:
   - infrastructure/controllers/cert-manager.yaml
   - infrastructure/controllers/external-dns.yaml
   - infrastructure/controllers/external-secrets.yaml
+  - infrastructure/controllers/ingress-nginx-external.yaml
   - infrastructure/controllers/ingress-nginx.yaml
   - infrastructure/controllers/metallb.yaml
   - infrastructure/controllers/openebs.yaml
