@@ -21,3 +21,27 @@ spec:
     - hosts:
         - home-assistant.maxime.in
       secretName: home-assistant.maxime.in
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: home-assistant-webhook
+  annotations:
+    cert-manager.io/cluster-issuer: maxime-in-letsencrypt-cluster-issuer
+    kubernetes.io/ingress.class: nginx-external
+spec:
+  rules:
+    - host: home-assistant.maxime.in
+      http:
+        paths:
+          - backend:
+              service:
+                name: home-assistant
+                port:
+                  name: http
+            path: /api/webhook
+            pathType: Prefix
+  tls:
+    - hosts:
+        - home-assistant.maxime.in
+      secretName: letsencrypt-home-assistant.maxime.in
