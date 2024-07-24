@@ -58,3 +58,15 @@ module "flux_install" {
 
   depends_on = [module.k0s_cluster, module.create_namespaces]
 }
+
+module "create_secrets" {
+  source = "./modules/kube-create-secrets"
+  count  = var.create_secrets == true ? 1 : 0
+
+  home_assistant_access_token = var.secrets_home_assistant_access_token
+
+  linky_prm   = var.secrets_linky_prm
+  linky_token = var.secrets_linky_token
+
+  depends_on = [module.k0s_cluster, module.create_namespaces]
+}
