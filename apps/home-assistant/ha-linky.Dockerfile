@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.description="HA Linky Standalone"
 LABEL org.opencontainers.image.licenses=MIT
 
 # Install Node.js and Git
-RUN apk add --no-cache nodejs npm git
+RUN apk add --no-cache nodejs npm git tzdata
 
 # Clone the repository
 RUN git clone https://github.com/bokub/ha-linky.git

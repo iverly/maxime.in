@@ -18,6 +18,8 @@ spec:
         - name: ha-linky
           image: ghcr.io/iverly/maxime.in/ha-linky:f030a4a
           env:
+            - name: TZ
+              value: Europe/Paris
             - name: SUPERVISOR_TOKEN
               valueFrom:
                 secretKeyRef:
