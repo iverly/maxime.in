@@ -24,7 +24,7 @@ spec:
                   name: home-assistant-credentials
                   key: access_token
             - name: WS_URL
-              value: "ws://home-assistant/api/websocket"
+              value: "ws://home-assistant:8080/api/websocket"
           volumeMounts:
             - name: secrets
               mountPath: "/data/options.json"
