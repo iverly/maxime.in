@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ha-linky
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: home-assistant
+      app.kubernetes.io/instance: ha-linky
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: home-assistant
+        app.kubernetes.io/instance: ha-linky
+    spec:
+      containers:
+        - name: ha-linky
+          image: ghcr.io/iverly/maxime.in/ha-linky:f030a4a
+          env:
+            - name: SUPERVISOR_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-credentials
+                  key: access_token
+            - name: WS_URL
+              value: "ws://home-assistant/api/websocket"
+          volumeMounts:
+            - name: secrets
+              mountPath: "/data/options.json"
+              subPath: "linky.json"
+      volumes:
+        - name: secrets
+          secret:
+            secretName: home-assistant-secrets

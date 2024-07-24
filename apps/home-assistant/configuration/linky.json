@@ -1,0 +1,12 @@
+{
+  "meters": [
+    {
+      "prm": "{{ .linkyPrm }}",
+      "token": "{{ .linkyToken }}",
+      "name": "Linky consumption",
+      "action": "sync",
+      "production": false
+    }
+  ],
+  "costs": []
+}

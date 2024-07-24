@@ -6,6 +6,7 @@ resources:
   - manifests/external-secrets/rbac.yaml
   - manifests/external-secrets/secrets-template.yaml
   - manifests/external-secrets/store.yaml
+  - manifests/ha-linky/deployment.yaml
   - manifests/ingress.yaml
   - manifests/postgres.yaml
   - manifests/pvc.yaml
@@ -18,6 +19,7 @@ configMapGenerator:
     files:
       - configuration/automations.yaml
       - configuration/configuration.yaml
+      - configuration/linky.json
       - configuration/scenes.yaml
       - configuration/scripts.yaml
       - configuration/secrets.yaml
